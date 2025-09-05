@@ -85,7 +85,6 @@ function createAnimatedName() {
     });
 }
 
-// Initialize
 window.addEventListener('load', function () {
     createParticles();
     handleScrollAnimations();
@@ -98,7 +97,6 @@ window.addEventListener('resize', function () {
 
 window.addEventListener('scroll', handleScrollAnimations);
 
-// Add interactive effects to buttons
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-3px) scale(1.05)';
@@ -108,10 +106,45 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
-// Add parallax effect to hero section
 window.addEventListener('scroll', function () {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const rate = scrolled * -0.5;
     hero.style.transform = `translateY(${rate}px)`;
+});
+
+const chatIcon = document.getElementById("chat-icon");
+const chatBox = document.getElementById("chat-box");
+const chatMessages = document.getElementById("chat-messages");
+
+chatIcon.addEventListener("click", () => {
+    chatBox.style.display = (chatBox.style.display === "block") ? "none" : "block";
+});
+
+document.getElementById("chatForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const input = document.getElementById("chatInput");
+    const message = input.value.trim();
+
+    if (message !== "") {
+        // Hiển thị tin nhắn người dùng
+        const userMsg = document.createElement("div");
+        userMsg.className = "message user";
+        userMsg.textContent = message;
+        chatMessages.appendChild(userMsg);
+
+        // Hiển thị tin nhắn bot (phản hồi)
+        setTimeout(() => {
+            const botMsg = document.createElement("div");
+            botMsg.className = "message bot";
+            botMsg.textContent = "🚧 This feature is under development.";
+            chatMessages.appendChild(botMsg);
+
+            // Tự động cuộn xuống cuối
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 500);
+
+        // Clear input
+        input.value = "";
+    }
 });
