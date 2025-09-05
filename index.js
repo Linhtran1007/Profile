@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -11,8 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Navbar scroll effect
 window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 100) {
@@ -22,7 +20,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// Create animated particles (rain effect)
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 100;
@@ -32,17 +29,16 @@ function createParticles() {
         particle.className = 'particle';
         const size = Math.random() * 3 + 1;
         particle.style.width = `${size}px`;
-        particle.style.height = `${Math.random() * 20 + 10}px`; // Elongated for raindrop effect
+        particle.style.height = `${Math.random() * 20 + 10}px`; 
         particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * -100}px`; // Start above viewport
+        particle.style.top = `${Math.random() * -100}px`;
         particle.style.animationDelay = `${Math.random() * 5}s`;
-        particle.style.animationDuration = `${Math.random() * 2 + 1.5}s`; // Faster fall
+        particle.style.animationDuration = `${Math.random() * 2 + 1.5}s`;
         particle.style.opacity = Math.random() * 0.5 + 0.2;
         particlesContainer.appendChild(particle);
     }
 }
 
-// Scroll animations
 function handleScrollAnimations() {
     const elements = document.querySelectorAll('.fade-in');
     const windowHeight = window.innerHeight;
@@ -54,7 +50,6 @@ function handleScrollAnimations() {
     });
 }
 
-// Animated name effect
 function createAnimatedName() {
     const titleContainer = document.getElementById('hero-title');
     const text = document.querySelector('.hero h1').textContent;
@@ -127,24 +122,20 @@ document.getElementById("chatForm").addEventListener("submit", function (e) {
     const message = input.value.trim();
 
     if (message !== "") {
-        // Hiển thị tin nhắn người dùng
         const userMsg = document.createElement("div");
         userMsg.className = "message user";
         userMsg.textContent = message;
         chatMessages.appendChild(userMsg);
 
-        // Hiển thị tin nhắn bot (phản hồi)
+        
         setTimeout(() => {
             const botMsg = document.createElement("div");
             botMsg.className = "message bot";
             botMsg.textContent = "🚧 This feature is under development.";
             chatMessages.appendChild(botMsg);
-
-            // Tự động cuộn xuống cuối
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }, 500);
 
-        // Clear input
         input.value = "";
     }
 });

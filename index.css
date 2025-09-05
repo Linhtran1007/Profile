@@ -503,7 +503,6 @@ h2 {
     opacity: 1;
     transform: translateY(0);
 }
-/* Floating Chat Icon */
 #chat-icon {
     position: fixed;
     bottom: 20px;
@@ -523,7 +522,6 @@ h2 {
     transform: scale(1.1);
 }
 
-/* Chat Box */
 #chat-box {
     position: fixed;
     bottom: 80px;
@@ -572,3 +570,4 @@ h2 {
 #chat-box button:hover {
     background: #36a89e;
 }
+
