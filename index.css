@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Enhanced Rain Particles */
 .particles {
     position: fixed;
     top: 0;
@@ -194,13 +193,13 @@ nav.scrolled {
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 .contact-link {
-    color: white;          /* chữ màu trắng */
-    text-decoration: none; /* bỏ gạch chân mặc định */
-    font-weight: bold;     /* chữ đậm cho nổi bật */
+    color: white;         
+    text-decoration: none; 
+    font-weight: bold;   
 }
 
 .contact-link:hover {
-    color: #1877F2;        /* xanh Facebook khi hover */
+    color: #1877F2;      
 }
 
 
@@ -266,7 +265,6 @@ h2 {
     background-clip: text;
 }
 
-/* About Section */
 .about {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
